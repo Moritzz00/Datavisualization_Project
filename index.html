@@ -5,33 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datavisualization Project</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body>
 
-<section class = "section"> 
-  <container class = "container">
+
+<section class = "section">
+
+  <container class = "main-content">
     <div class = "intro-wrapper">
       <p class="title"> Zeitschriften im DACH-Raum </p>
+      <div id = "general-information" class = "general-information">
+        <!-- General Information gets added by JS code here -->
+      </div>
     </div>
-    <div class = "grid">
-      <div class = "journal"> 1 </div>
-      <div class = "journal"> 2 </div>
-      <div class = "journal"> 3 </div>
-      <div class = "journal"> 4 </div>
-      <div class = "journal"> 5 </div>
-      <div class = "journal"> 6 </div>
-      <div class = "journal"> 7 </div>
-      <div class = "journal"> 8 </div>
-      <div class = "journal"> 9 </div>
-      <div class = "journal"> 10 </div>
-      <div class = "journal"> 11 </div>
-      <div class = "journal"> 12 </div>
-    </div>
+    
+    <div id = "box-container" class="grid"></div>
+    <!-- Journals with their respective count of titels get added here-->
+
   </container>
-  <aside class = "aside">
-    <div class = "general-information">
-      <p class = "paragraph"> Es gibt insgesamt 9200 Artikel von 26 Zeitschriften. </p>
+
+  <container class = "aside">
+    <div class = "manual">
       <p class = "paragraph"> Wähle eine der Zeitschriften aus, um zu den Artikeln zu gelangen.</p>
     </div>
-  </aside>
+  </container>
+
+
+  <script src="load_csv.js"></script>
 </section>
+
+</body>
+</html>

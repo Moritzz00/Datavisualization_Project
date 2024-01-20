@@ -8,24 +8,11 @@
   padding: 0;
 }
 
-.container{
+.main-content{
   display: block;
   width: 100%;
   max-width: 1140px;
   margin: auto;
-  padding: auto;
-}
-
-.aside{
-  width: 20%;
-  height: 300px;
-  background-color: lightgray;
-  outline: black solid 1px;
-  font-size: 24px;
-}
-
-.general-information{
-  margin: 10px;
 }
 
 .paragraph{
@@ -42,6 +29,13 @@
 .title{
   text-align: center;
   font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.general-information{
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .grid{
@@ -51,8 +45,29 @@
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
 }
 
+.box{
+  text-align: center;
+  
+}
+
 .journal{
   font-style: italic;
   border: 1px solid rgba(0, 0, 0, 0.8);
-  text-align: center;
+}
+
+.count{
+  font-style: bold;
+}
+
+.aside{
+  float: left;
+  width: 20%;
+  height: 300px;
+  background-color: lightgray;
+  outline: black solid 1px;
+  font-size: 24px;
+}
+
+.manual{
+  margin: 10px;
 }
