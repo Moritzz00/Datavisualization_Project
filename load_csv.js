@@ -1,6 +1,6 @@
 
 // Use D3.js to load the CSV file
-d3.csv("modifizierter_Datensatz.csv").then(function(data) {
+d3.csv("aufgeräumter_Datensatz.csv").then(function(data) {
   // 'data' is an array containing the contents of the CSV file
 
   // Process the data and aggregate counts by journal
@@ -48,3 +48,16 @@ d3.csv("modifizierter_Datensatz.csv").then(function(data) {
     .classed("paragraph", true)
     .text(`Es gibt insgesamt ${totalCount} Artikel von ${uniqueJournalCount} Zeitschriften in dem Datensatz.`)
 });
+
+const table = d3.csv("Baumkarte_Datensatz").then(function(data){
+  
+  var groupedData = d3.rollup(
+    data,
+
+    
+  )
+
+
+});
+
+console.log(table);
