@@ -1,4 +1,5 @@
 import pandas as pd
+from jinja2 import Template
 
 df = pd.read_csv('Baumkarte_Datensatz.csv')
 
@@ -35,4 +36,16 @@ fig.update_layout(
     'yanchor': 'top'
   }
 )
-fig.show()
+
+output_html_path = r"index.html"
+input_template_path = r"template.html"
+
+plotly_jinja_data = {"fig":fig.to_html(full_html=False)}
+
+with open(output_html_path, "w", encoding="utf-8") as output_file:
+    with open(input_template_path) as template_file:
+        j2_template = Template(template_file.read())
+        output_file.write(j2_template.render(plotly_jinja_data))
+
+
+#fig.show()
