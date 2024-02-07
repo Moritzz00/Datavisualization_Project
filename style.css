@@ -14,14 +14,10 @@
   margin: auto;
 }
 
-.paragraph{
-  margin: 10px 0px;
-}
-
 .intro-wrapper{
   display: block;
   margin-top: 100px;
-  margin-bottom: 120px;
+  margin-bottom: 30px;
   align-content: center;
 }
 
@@ -70,6 +66,15 @@
 .barchart{
   height: auto;
   width: auto;
+}
+
+.figure{
+  
+}
+
+.paragraph{
+  padding-top: 10px;
+  margin: 0px; 
 }
 
 .manual{

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datavisualization Project</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel="stylesheet" href="./circle-style.css">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
 </head>
 <body>
@@ -17,26 +17,46 @@
     <div class = "intro-wrapper">
       <p class="title">Artikel aus Zeitschriften im DACH-Raum </p>
       <div id = "general-information" class = "general-information">
-        <!-- General Information gets added by JS code here -->
+        <p>Eine explorative Visualisierung um die Inhalte des Datensatzes zu verdeutlichen.</p>
+
       </div>
     </div>
-    
-    <div id = "box-container" class="grid"></div>
-    <!-- Journals with their respective count of titels get added here -->
-
   </container>
 
-
 </section>
+
+
 <section class = "section">
+  
   <container class = "barchart">
-    <div>
+    <div class = "figure">
       {{ fig }}
     </div>
   </container>
+</section>
 
+<section class = "circle-diagramm">
+  <div class="circle-container">
+    <div class="text-container">
+      <p>Es gibt 60 frei zugängliche Online-Zeitschriften zum Recht aus dem deutschsprachigen Raum (DE/AU/CH/LI), <br> 
+        von denen die ältesten seit 1996 erscheinen. <br>
+        Sie veröffentlichen jedes Jahr wissenschaftliche Artikel aus verschiedenen Forschungsbereichen.</p>
+      <p>Diese Visualisierung zeigt die explorativ die Struktur der Zeitschriften und deren Autoren.</p>
+      <p>Durch Anklicken der Kreise kann detailierter in spezifische Stufen der Strukturen eingesehen werden. <br>
+        Land zu Zeitchrift zu Autoren.</p>
+      <p>Ziel ist es, die wichtigsten Autoren für jede Zeitschrift zu erkennen. Dabei definieren wir wichtige Autoren <br>
+        ab der Veröffentlichung von 4 Artikeln.</p>
+    </div>
+    <svg id="circle-packingDiagram" width="740" height="740"></svg>
+  </div>
+  <div class="source">
+    <p>Quelle: <a href="https://e.pcloud.link/publink/show?code=XZ4fF1ZADKEyuT68fRDQ96oTABmrRFlTVk7" target="_blank">Datensatz</a></p>
+  </div>
 
-  <script src="load_csv.js"></script>
+  <script src='https://d3js.org/d3.v4.min.js'></script><script  src="circle-script.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.min.js"></script>
+
 </section>
 
 </body>

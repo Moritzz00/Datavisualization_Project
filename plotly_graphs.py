@@ -15,10 +15,11 @@ fig = px.bar(
   orientation='h',
   x="Anzahl",
   y="Zeitschriftkürzel",
-  labels=dict(Anzahl="Anzahl veröffentlichter Artikel", Zeitschriftkürzel="Zeitschriftkürzel"),
+  labels=dict(Anzahl="Anzahl veröffentlichter Artikel", Zeitschriftkürzel="Kürzel der Zeitschriften"),
   color="Land",
+  title="Anzahl der veröffentlichten Artikel pro Zeitschrift, absteigend nach Anzahl sortiert und nach Veröffentlcihungsland gruppiert.",
   width=1500,
-  height=800,
+  height=700,
   hover_name= "Zeitschrift", 
   hover_data={
     'Zeitschriftkürzel': False,
@@ -33,7 +34,13 @@ fig.update_traces(width=1)
 
 fig.update_layout(
   title={
-    'y':0.9,
+    'text': "Anzahl der veröffentlichten Artikel pro Zeitschrift, absteigend nach Anzahl sortiert und nach Veröffentlichungsland gruppiert.",
+    'font': {
+      'size': 20
+    },
+    'automargin': True,
+    'yref': 'container',
+    'y': 0.9,
     'x': 0.5,
     'xanchor': 'center',
     'yanchor': 'top'
