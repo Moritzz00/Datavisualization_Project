@@ -1,11 +1,6 @@
 .section{
-  display: flex;
-  direction: vertical;
-  align-items: stretch;
-  justify-items: start;
   margin-left: 30px;
   margin-right: 30px;
-  padding: 0;
 }
 
 .main-content{
@@ -31,45 +26,32 @@
   margin: 10px;
   text-align: center;
   font-size: 20px;
-}
-
-.grid{
-  display: grid;
-  column-gap: 10px;
-  row-gap: 20px;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-}
-
-.box{
-  text-align: center;
-  
-}
-
-.journal{
   font-style: italic;
-  border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
-.count{
-  font-style: bold;
-}
-
-.aside{
-  float: right;
-  width: 20%;
-  height: 300px;
-  background-color: lightgray;
-  outline: black solid 1px;
-  font-size: 24px;
-}
 
 .barchart{
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
   height: auto;
-  width: auto;
 }
 
-.figure{
-  
+.barchart-text{
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.paragraph{
+  padding-top: 10px;
+  margin: 0px; 
+}
+
+.baumkarte{
+  margin: auto;
+  width: 50%;
 }
 
 .paragraph{

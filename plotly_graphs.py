@@ -10,7 +10,7 @@ sorted_df = grouped_df.sort_values(by="Anzahl", ascending=False)
 
 import plotly.express as px
 
-fig = px.bar(
+fig1 = px.bar(
   sorted_df,
   orientation='h',
   x="Anzahl",
@@ -27,12 +27,11 @@ fig = px.bar(
     'Zeitschrift': False,
     'Anzahl': True
     },
-  color_discrete_sequence=px.colors.qualitative.G10)  # Hier das gewünschte Farbschema eintragen)
-  #category_values -> Länder sortieren?
+  color_discrete_sequence=px.colors.qualitative.G10)  #category_values -> Länder sortieren?
 
-fig.update_traces(width=1)
+fig1.update_traces(width=1)
 
-fig.update_layout(
+fig1.update_layout(
   title={
     'text': "Anzahl der veröffentlichten Artikel pro Zeitschrift, absteigend nach Anzahl sortiert und nach Veröffentlichungsland gruppiert.",
     'font': {
@@ -47,13 +46,16 @@ fig.update_layout(
   },
   xaxis={
   },
-  yaxis=dict(autorange="reversed")
+  yaxis=dict(autorange="reversed"),
+  paper_bgcolor = "#dadada",
 )
+
+# export to html
 
 output_html_path = r"index.html"
 input_template_path = r"template.html"
 
-plotly_jinja_data = {"fig":fig.to_html(full_html=False)}
+plotly_jinja_data = { "fig1":fig1.to_html(full_html=False)}
 
 with open(output_html_path, "w", encoding="utf-8") as output_file:
     with open(input_template_path) as template_file:
