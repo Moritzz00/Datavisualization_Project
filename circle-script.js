@@ -1,4 +1,4 @@
-var svg = d3.select("svg"),
+var svg = d3.select("#circle-packingDiagram"),
   margin = 20,
   diameter = +svg.attr("width"),
   g = svg
