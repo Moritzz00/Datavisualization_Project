@@ -1,4 +1,4 @@
-var svg = d3.select("#circle-packingDiagram"),
+var svg = d3.select("svg"),
   margin = 20,
   diameter = +svg.attr("width"),
   g = svg
@@ -13,16 +13,15 @@ var color = d3
 
 var pack = d3
   .pack()
-  .size([diameter - margin, diameter - margin])
-  .padding(2);
+  .size([diameter, diameter])
 
-d3.json("chart+4.2.json", function (error, root) {
+d3.json("chart_final.json", function (error, root) {
   if (error) throw error;
 
   root = d3
     .hierarchy(root)
     .sum(function (d) {
-      return d.size;
+      return (d.size);
     })
     .sort(function (a, b) {
       return b.value - a.value;
@@ -31,6 +30,10 @@ d3.json("chart+4.2.json", function (error, root) {
   var focus = root,
     nodes = pack(root).descendants(),
     view;
+
+  var div = d3.select("body").append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0);
 
   var circle = g
     .selectAll("circle")
@@ -60,32 +63,56 @@ d3.json("chart+4.2.json", function (error, root) {
       else if (d.data.name === "Niederlande") {
         return "#990099";
       }
-      else if (d.data.tag === 0) {
+      else if (d.data.tag === 1 || d.data.tag === 11) {
         return "#0099C6";
       }
-      else if (d.data.tag === 4) {
+      else if (d.data.tag === 5 || d.data.tag === 55) {
         return "#DD4477";
       }
-      else if (d.data.tag === 3) {
+      else if (d.data.tag === 4 || d.data.tag === 44) {
         return "#66AA00";
       }
-      else if (d.data.tag === 1) {
+      else if (d.data.tag === 2 || d.data.tag === 22) {
         return "#DC3912";
       }
-      else if (d.data.tag === 2) {
+      else if (d.data.tag === 3 || d.data.tag === 33) {
         return "#FFB647";
       }
        else {
         return d.children ? color(d.depth) : null;
       }
     })
-    .attr("r", function (d) {
-      // Verwende den Wert aus dem "size"-Attribut
-      return d.data.size;
-    })
     .on("click", function (d) {
       if (focus !== d) zoom(d), d3.event.stopPropagation();
-    });
+      div.transition()
+      .duration('50')
+      .style("opacity", 0);
+    })
+    .on('mouseover', function (d) {
+      //d3.select(this).transition()
+      //     .duration('50')
+      //     .attr('opacity', '.85');
+      //Makes the new div appear on hover:
+      div.transition()
+      .duration(50)
+      .style("opacity", 1);
+
+
+      let num =d.data.tooltip + '<br>Anzahl an Zeitschriften: ' + d.data.size;
+      div.html(num)
+     .style("left", (d3.event.pageX + 10) + "px")
+     .style("top", (d3.event.pageY - 15) + "px");
+    })
+    .on('mouseout', function (d) {
+      //d3.select(this).transition()
+      //     .duration('50')
+      //     .attr('opacity', '1');
+
+      //Makes the new div disappear:
+      div.transition()
+      .duration('50')
+      .style("opacity", 0);
+    })
 
   var text = g
     .selectAll("text")
