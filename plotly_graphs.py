@@ -1,4 +1,5 @@
 import pandas as pd
+import plotly.express as px
 from jinja2 import Template
 
 df = pd.read_csv('aufgeräumter_Datensatz.csv')
@@ -52,13 +53,54 @@ fig1.update_layout(
   paper_bgcolor = "#dadada",
 )
 
-# fig1.show()
+#fig1.show()
+
+
+# Daten aus der CSV-Datei lesen
+df = pd.read_csv('aufgeräumter_Datensatz.csv')
+
+# Treemap erstellen
+fig2 = px.treemap(
+  df, 
+  path=['Land', 'Zeitschriftkürzel'],
+  hover_data={'Zeitschriftkürzel': False, 'Zeitschrift': True}, 
+  color_discrete_sequence=px.colors.qualitative.G10,
+  width=1500,
+  height=700,
+  )
+
+# Layoutanpassungen
+fig2.update_layout(
+    margin=dict(t=50, l=25, r=25, b=25),
+    title={
+      'text': "Proportionale Aufteilung des Raumes in Länder und Zeitschriften nach Anzahl der Artikel",
+      'font': {
+        'size': 20
+      },
+      'automargin': True,
+      'yref': 'container',
+      'y': 0.9,
+      'x': 0.5,
+      'xanchor': 'center',
+      'yanchor': 'top'
+      },
+    paper_bgcolor = "#dadada",
+)
+
+# Text in den Karten zentrieren
+fig2.update_traces(textposition='middle center')
+
+
 # export to html
+
+
 
 output_html_path = r"index.html"
 input_template_path = r"template.html"
 
-plotly_jinja_data = { "fig1":fig1.to_html(full_html=False)}
+plotly_jinja_data = { "fig1":fig1.to_html(full_html=False),
+                      "fig2":fig2.to_html(full_html=False)}
+
 
 with open(output_html_path, "w", encoding="utf-8") as output_file:
     with open(input_template_path) as template_file:

@@ -30,7 +30,7 @@
 }
 
 
-.barchart{
+.barchart-container{
   align-items: center;
   justify-content: space-around;
   width: 100%;
@@ -49,9 +49,17 @@
   margin: 0px; 
 }
 
-.baumkarte{
+.baumkarte-div{
   margin: auto;
-  width: 50%;
+  width: 100%;
+}
+
+.baumkarte-container{
+  display: block;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
 }
 
 .paragraph{
