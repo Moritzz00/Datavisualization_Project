@@ -98,7 +98,7 @@ d3.json("chart_final.json", function (error, root) {
       .style("opacity", 1);
 
 
-      let num =d.data.tooltip + '<br>Anzahl an Zeitschriften: ' + d.data.size;
+      let num =d.data.tooltip + '<br>Anzahl an Artikel: ' + d.data.size;
       div.html(num)
      .style("left", (d3.event.pageX + 10) + "px")
      .style("top", (d3.event.pageY - 15) + "px");
