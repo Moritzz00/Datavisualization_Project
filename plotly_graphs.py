@@ -8,6 +8,8 @@ grouped_df = grouped_df.rename(columns= {'Titel': 'Anzahl'})
 
 sorted_df = grouped_df.sort_values(by="Anzahl", ascending=False)
 
+print(sorted_df.head())
+
 import plotly.express as px
 
 fig1 = px.bar(
@@ -50,6 +52,7 @@ fig1.update_layout(
   paper_bgcolor = "#dadada",
 )
 
+fig1.show()
 # export to html
 
 output_html_path = r"index.html"

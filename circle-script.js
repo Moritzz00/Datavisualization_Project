@@ -31,7 +31,7 @@ d3.json("chart_final.json", function (error, root) {
     nodes = pack(root).descendants(),
     view;
 
-  var div = d3.select("body").append("div")
+  var div = d3.select("#circle-Section").append("div")
   .attr("class", "tooltip")
   .style("opacity", 0);
 
