@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datavisualization Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+</head>
+<body>
+
+
+<section class = "section">
+
+  <container class = "main-content">
+    <div class = "intro-wrapper">
+      <p class="title">Artikel aus Zeitschriften im DACH-Raum </p>
+      <div id = "general-information" class = "general-information">
+        <!-- General Information gets added by JS code here -->
+      </div>
+    </div>
+    
+    <div id = "box-container" class="grid"></div>
+    <!-- Journals with their respective count of titels get added here -->
+
+  </container>
+
+
+</section>
+<section class = "section">
+  <container class = "barchart">
+    <div>
+      {{ fig }}
+    </div>
+  </container>
+
+
+  <script src="load_csv.js"></script>
+</section>
+
+</body>
+</html>
