@@ -55,7 +55,7 @@ body {
   .label {
     font:"Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    text-anchor: start;
+    text-anchor: middle;
     text-shadow: 0 1px 0 #fff, 1px 0 0 #ffffff, -1px 0 0 #fff, 0 -1px 0 #fff;
   }
   
