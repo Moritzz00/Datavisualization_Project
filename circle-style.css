@@ -30,7 +30,7 @@ body {
 }
 
 .source {
-  text-align: right;
+  text-align: center;
   margin-top: 0px; /* Passe den gewünschten Abstand zur Quellenangabe an */
   margin-right: 50px; /* Passe den gewünschten Abstand zum linken Rand an */
 }
