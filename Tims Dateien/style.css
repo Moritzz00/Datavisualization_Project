@@ -1,0 +1,67 @@
+body {
+  height: 100%;
+  margin: 0;
+  margin-top: 20px;
+  background-color: #dadada;
+  font-family: 'Arial', sans-serif;
+}
+
+.centered-heading {
+  text-align: center; /* Zentriere den Text */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.text-container {
+  margin-right: -200px;
+  padding: 20px;
+}
+
+.source {
+  text-align: right;
+  margin-top: 0px; /* Passe den gewünschten Abstand zur Quellenangabe an */
+  margin-right: 50px; /* Passe den gewünschten Abstand zum linken Rand an */
+}
+
+.source p {
+  font-size: 14px; /* Passe die Schriftgröße nach Bedarf an */
+}
+
+.node {
+    cursor: pointer;
+  }
+  
+  .node:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+  
+  .node--leaf {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .label {
+    font:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-anchor: start;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #ffffff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  }
+  
+  .label,
+  .node--root,
+  .node--leaf {
+    pointer-events: none;
+  }
+
+  #circle-packingDiagram {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #dadada; /* Hintergrundfarbe für abgerundete Ecken */
+    padding: 0px; /* Passe den Abstand nach Bedarf an */
+    border: 1px solid #ddd; /* Farbe und Dicke des Rahmens anpassen */
+  }
