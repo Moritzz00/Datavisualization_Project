@@ -19,7 +19,7 @@ fig1 = px.bar(
   y="Zeitschriftkürzel",
   labels=dict(Anzahl="Anzahl veröffentlichter Artikel", Zeitschriftkürzel="Kürzel der Zeitschriften"),
   color="Land",
-  title="Anzahl der veröffentlichten Artikel pro Zeitschrift, absteigend nach Anzahl sortiert und nach Veröffentlcihungsland gruppiert.",
+  title="Anzahl der veröffentlichten Artikel pro Zeitschrift, absteigend nach Anzahl sortiert und nach Veröffentlichungsland gruppiert.",
   width=1500,
   height=700,
   hover_name= "Zeitschrift", 
@@ -52,7 +52,7 @@ fig1.update_layout(
   paper_bgcolor = "#dadada",
 )
 
-fig1.show()
+# fig1.show()
 # export to html
 
 output_html_path = r"index.html"
