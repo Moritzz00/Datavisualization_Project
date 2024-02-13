@@ -305,7 +305,8 @@
                             {"tooltip":"Stephan Kokew", "size":2, "children":[{"name":"Stephan Kokew", "size":2}]}
                             ]
                         },
-                        {"name": "ZVR", "size":280, "tag":1, "tooltip":"Zeitschrift für Verwaltungsrecht Online", "children":[{"name": "ZVR", "size": 280, "tag":11}]}
+                        {"name": "ZVR", "size":280, "tag":1, "tooltip":"Zeitschrift für Verwaltungsrecht Online", "children":[{"name": "ZVR", "size": 280, "tag":11}]},
+                        {"name": "JLL","size":57, "tag":1, "tooltip":"International J. of Language & Law", "children":[{"name": "JLL", "size": 57, "tag":11}]}
                     ]
                 },
         {
@@ -337,12 +338,6 @@
             "name": "Liechtenstein", "size":96, "tooltip":"Liechtenstein",
             "children": [
                 	    {"name":"SPWR", "size":96, "tag":4, "tooltip":"Spektrum des Wirtschaftsrecht", "children":[{"name": "SPWR", "size": 96, "tag":44}]}
-                    ]
-                },
-        {
-            "name": "Niederlande", "size":57, "tooltip":"Niederlande",
-            "children": [
-                        {"name": "JLL","size":57, "tag":5, "tooltip":"International J. of Language & Law", "children":[{"name": "JLL", "size": 57, "tag":55}]}
                     ]
                 }
     ]
